@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <style>
+            #bg{
+                background-image: url(tree.jpg);
+                background-repeat: no-repeat;
+                background-size:cover;
+                background-position-x: center;
+                background-position-y: top;
+                
+            }
+            #Video{
+                pointer-events: none;
+            }
+            
+        </style>
+        <title>Spining twats</title>
+    </head>
+    <body id = "bg">
+        <div style="text-align:center"> 
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="playPause()">
+                <img id="pp" src="play.png" width="90" height="90" alt="submit">
+            </button>
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="makeBig()">
+                <img src="big.png" width="90" height="90" alt="submit">
+            </button>
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="makeMedium()">
+                <img src="medium.png" width="90" height="90" alt="submit">
+            </button>
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="makeSmall()">
+                <img src="small.png" width="90" height="90" alt="submit">
+            </button>
+            <br>
+            <video id="Video" width="300" height="300" controls>
+                <source id="src" src="twats.mp4" type="video/mp4">
+                DumbFuck
+            </video>
+            <br>
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="changeTree()">
+                <img src="tree.jpg" width="90" height="90" alt="submit">
+            </button>
+            
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="changePvz()">
+                <img src="pvz.jpg" width="90" height="90" alt="submit">
+            </button>
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="changeUganda()">
+                <img src="uganda.jpg" width="90" height="90" alt="submit">
+            </button>
+            <button type="submit" style="border: 0; background: transparent; margin:10px" onclick="changeRick()">
+                <img src="rick.png" width="90" height="90" alt="submit">
+            </button>
+        </div>
+
+    </body>
+</html>
+<script> 
+    var myVideo = document.getElementById("Video"); 
+    var rick = 0;
+    
+    function changeTree() {
+        
+        if(!rick)
+            document.getElementById("bg").style.backgroundImage= "url(tree.jpg)";
+    }
+    function changePvz() {
+        if(!rick)
+            document.getElementById("bg").style.backgroundImage= "url(pvz.jpg)";
+    }
+    function changeUganda() {
+        if(!rick)
+            document.getElementById("bg").style.backgroundImage= "url(uganda.jpg)";
+    }
+    function changeRick() {
+        if(!rick)
+        {
+            document.getElementById("bg").style.backgroundImage= "url(rick.png)";
+            document.getElementById("src").setAttribute('src', 'Rick.mp4');
+            myVideo.load();
+            rick = 1;
+            playPause();
+        }
+    }
+
+    function playPause() { 
+        if (myVideo.paused) 
+        {
+            myVideo.play(); 
+            pp.src = "pause.png";
+        }else if(!rick){
+            myVideo.pause(); 
+            pp.src = "play.png";
+        }
+        
+    } 
+    
+    function makeBig() { 
+        myVideo.width = 400; 
+        myVideo.height = 400; 
+    } 
+    function makeMedium() { 
+        myVideo.width = 300; 
+        myVideo.height = 300; 
+    } 
+    function makeSmall() { 
+        myVideo.width = 200; 
+        myVideo.height = 200; 
+    } 
+    
+    
+    </script> 
